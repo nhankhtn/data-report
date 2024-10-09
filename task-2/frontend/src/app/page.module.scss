@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  margin: 0 400px;
+}
+.header {
+  display: flex;
+  padding-bottom: 40px;
+  box-shadow: 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+}
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.right {
+}
+.btn-close {
+  display: inline-flex;
+  gap: 4px;
+  width: 60px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 8px 0;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  & .icon {
+    width: 16px;
+    height: 16px;
+  }
+  & span {
+  }
+}
+.heading {
+}
+.btn-update {
+  padding: 12px 16px;
+  background-color: #2970ff;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.form-item {
+  padding: 8px 12px;
+  border: 1px solid #666;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  position: relative;
+
+  & label {
+    padding: 0 2px;
+    font-size: 0.9rem;
+    color: #666;
+  }
+  & input,
+  & select {
+    border: none;
+    font-size: 1rem;
+    &:focus-within {
+      outline: none;
+    }
+  }
+}
+.icon-calendar {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  cursor: pointer;
+  padding: 8px;
+  font-size: 1.2rem;
+  transform: translateY(-50%);
+}
+.message {
+  font-size: 0.8rem;
+  color: red;
+  padding-left: 12px;
+}
