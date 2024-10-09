@@ -4,8 +4,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faArrowLeftLong,
   faCalendarDays,
+  faChevronDown,
 } from "@fortawesome/free-solid-svg-icons";
-import React, { useState } from "react";
+import React, { useRef, useState } from "react";
 import Flatpickr from "react-flatpickr";
 import "flatpickr/dist/themes/material_green.css";
 
@@ -23,6 +24,7 @@ export default function Home() {
     price: "",
   });
   const pillars = ["01", "03", "05", "06", "09"];
+  const selectRef = useRef(null);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -125,8 +127,19 @@ export default function Home() {
             <span className={styles.message}>{errors.quantity}</span>
           )}
           <div className={styles["form-item"]}>
-            <label htmlFor='pillar'>Trụ</label>
-            <select id='pillar' value={formData.pillar} onChange={handleChange}>
+            <label htmlFor='pillar'>
+              Trụ
+              <FontAwesomeIcon
+                className={styles["icon-down"]}
+                icon={faChevronDown}
+              />
+            </label>
+            <select
+              ref={selectRef}
+              id='pillar'
+              value={formData.pillar}
+              onChange={handleChange}
+            >
               <option value=''>Chọn trụ thực hiện giao dịch</option>
               {pillars.map((pillar, index) => (
                 <option key={index} value={pillar}>
